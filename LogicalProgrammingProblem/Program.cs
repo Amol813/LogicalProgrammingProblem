@@ -1,4 +1,5 @@
 ﻿using LogicalProgrammingPracticeProblem;
+using LogicalProgrammingProblem;
 using System;
 
 internal class Program
@@ -9,7 +10,7 @@ internal class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Reverse a number\n5. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Reverse a number\n5. Coupon Number\n6. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -55,6 +56,13 @@ internal class Program
                     Console.WriteLine("Reversed number: " + reversedNumber);
                     break;
                 case 5:
+                    CouponNumber coupon = new CouponNumber();
+                    Console.Write("Enter the value for the coupon number: ");
+                    int couponInput = Convert.ToInt32(Console.ReadLine());
+                    int couponNumber = coupon.Distinctcoupon(couponInput);
+                    Console.WriteLine("Coupon Number: " + couponNumber);
+                    break;
+                case 6:
                     flag = false;
                     break;
                 default:
