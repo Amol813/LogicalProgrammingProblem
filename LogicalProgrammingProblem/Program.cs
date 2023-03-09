@@ -9,7 +9,7 @@ internal class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Prime Number\n4. Reverse a number\n5. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -48,6 +48,13 @@ internal class Program
                     }
                     break;
                 case 4:
+                    ReverseANumber rev = new ReverseANumber();
+                    Console.Write("Enter a number to reverse: ");
+                    int reverseInput = Convert.ToInt32(Console.ReadLine());
+                    int reversedNumber = rev.ReverseNumber(reverseInput);
+                    Console.WriteLine("Reversed number: " + reversedNumber);
+                    break;
+                case 5:
                     flag = false;
                     break;
                 default:
