@@ -9,17 +9,31 @@ internal class Program
         bool flag = true;
         while (flag)
         {
-            Console.Write("1. Fibonacci\n2. Exit\nEnter your option to execute: ");
+            Console.Write("1. Fibonacci\n2. Perfect Number\n3. Exit\nEnter your option to execute: ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
                 case 1:
                     FibonacciSeries fib = new FibonacciSeries();
-                    Console.Write("Enter the number of Fibonacci Series: ");
+                    Console.Write("Enter the number of for Fibonacci Series: ");
                     int num = Convert.ToInt32(Console.ReadLine());
                     fib.PrintFibonacciSeries(num);
                     break;
                 case 2:
+                    PerfectNumber perf = new PerfectNumber();
+                    Console.Write("Enter a number to if it's a perfect number: ");
+                    int input = Convert.ToInt32(Console.ReadLine());
+                    bool isPerfect = perf.IsPerfectNumber(input);
+                    if (isPerfect)
+                    {
+                        Console.WriteLine(input + " is a perfect number.");
+                    }
+                    else
+                    {
+                        Console.WriteLine(input + " is not a perfect number.");
+                    }
+                    break;
+                case 3:
                     flag = false;
                     break;
                 default:
